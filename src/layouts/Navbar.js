@@ -3,7 +3,7 @@ import Logo from "../assets/images/logo.png"
 import { Link } from "react-router-dom"
 import { NavbarStyled } from "./styled"
 
-export default () => {
+export default function Navbar(){
   return (
     <NavbarStyled>
       <Link to="/">

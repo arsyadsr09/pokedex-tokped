@@ -7,7 +7,8 @@ import {
   ContainerStyled,
 } from "./styled"
 
-export default (props) => (
+export default function Navbar(props) {
+  return(
   <BgStyled img={BgBlack}>
     <ContainerStyled>
       <ContentStyled>
@@ -15,4 +16,4 @@ export default (props) => (
       </ContentStyled>
     </ContainerStyled>
   </BgStyled>
-)
+)}
