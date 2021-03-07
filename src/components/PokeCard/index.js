@@ -11,7 +11,7 @@ import {
   CirlceBg,
 } from "./styled"
 
-export default (props) => {
+export default function PokeCard() {
   return (
     <PokemonCard className="swing">
       <ImageCanvas className="img-canvas">
