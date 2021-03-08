@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 
+
 export const PokemonCard = styled.div`
   display: flex;
   position: relative;
@@ -12,6 +13,7 @@ export const PokemonCard = styled.div`
   // border: 1px solid #2f3542;
   flex-direction: column;
   margin: 10px 5px;
+
   @-webkit-keyframes swing {
     50% {
       -webkit-transform: translateY(-5px);
@@ -38,6 +40,7 @@ export const PokemonCard = styled.div`
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
   }
+
   &:hover {
     .img-canvas {
       min-width: 225px;
@@ -107,14 +110,17 @@ export const PokemonContent = styled.div`
 `
 
 export const PokemonTitle = styled.span`
-  margin: 0.5rem 0.8rem;
-  font-family: "FlexoBold", sans-serif;
+  text-transform: capitalize;
+  margin: 0.5rem 0.8rem 0 0.8rem;
+  font-family: "Exo", sans-serif;
+  font-weight: 600;
   font-size: 1.4rem;
   color: #2f3542;
 `
 
 export const PokemonNumber = styled.span`
-  font-family: "FlexoBold", sans-serif;
+  font-family: "Exo", sans-serif;
+  font-weight: 600;
   padding: 0 5px;
   font-size: 0.8rem;
   color: #747d8c;
@@ -122,73 +128,101 @@ export const PokemonNumber = styled.span`
 `
 
 export const PokemonTypeStyled = styled.span`
-  // text-transform: uppercase;
+  text-transform: capitalize;
   margin: 0 0.8rem;
   display: flex;
   align-self: flex-start;
   justify-content: space-around;
   font-size: small;
+
   span {
     border-radius: 4px;
     padding: 1px 10px;
     color: #fff;
     margin-right: 2px;
-    font-size: 11px;
+    font-size: 11.5px;
   }
+
   .normal {
     background: #eee;
     color: #333;
   }
+
   .grass {
     background: #56ab2f;
   }
+
   .poison {
     background: #ad5389;
   }
+
   .fighting {
     background: #ff8008;
   }
+
   .flying {
     background: #5c258d;
   }
+
   .ground {
     background: #ba8b02;
   }
+
   .rock {
     background: #3c3b3f;
   }
+
   .bug {
     background: #dce35b;
+    color: #333;
   }
+
   .ghost {
     background: #9d50bb;
   }
+
   .steel {
     background: #8e9eab;
     color: #333;
   }
+
   .fire {
     background: #ff416c;
   }
+
   .water {
     background: #43c6ac;
+    color: #333;
   }
+
   .electric {
     background: #42275a;
   }
+
   .psychic {
     background: #bc4e9c;
   }
+
   .ice {
     background: #7f7fd5;
   }
+
   .dragon {
     background: #0f0c29;
   }
+
   .dark {
     background: #232526;
   }
+
   .fairy {
     background: #b24592;
   }
+`
+
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
 `
