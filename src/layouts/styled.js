@@ -8,7 +8,8 @@ export const BgStyled = styled.div`
 `
 
 export const ContainerStyled = styled.div`
-  width: 75%;
+  width: ${(props) =>
+    props.width < 1366 ? "100%" : 1366 < props.width < 1500 ? "85%" : "75%"};
   min-height: 100vh;
   background-color: white;
 `
