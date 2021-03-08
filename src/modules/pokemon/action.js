@@ -1,5 +1,5 @@
 import axios from "axios"
-import { API_URL } from "../configs"
+import { API_URL } from "../../configs"
 import {
   GET_POKELIST,
   GET_POKELIST_FAILED,
@@ -7,7 +7,7 @@ import {
   GET_POKEMON_DETAIL,
   GET_POKEMON_DETAIL_SUCCESS,
   GET_POKEMON_DETAIL_FAILED,
-} from "./constants"
+} from "../constants"
 
 export const getPokemonList = (page = 1) => async (dispatch) => {
   dispatch({
@@ -32,6 +32,7 @@ export const getPokemonList = (page = 1) => async (dispatch) => {
         total: data.count,
         hasNext: !!data.next,
         data: data.results,
+        page,
       },
     })
   } catch (e) {
@@ -44,12 +45,11 @@ export const getPokemonList = (page = 1) => async (dispatch) => {
   }
 }
 
-
-export const getPokemon = (id, name) => async (dispatch) => {
+export const getPokemon = (name) => async (dispatch) => {
   dispatch({
     type: GET_POKEMON_DETAIL,
     payload: {
-      id,
+      name,
     },
   })
 
@@ -59,7 +59,7 @@ export const getPokemon = (id, name) => async (dispatch) => {
     dispatch({
       type: GET_POKEMON_DETAIL_SUCCESS,
       payload: {
-        id,
+        name,
         data: response.data,
       },
     })

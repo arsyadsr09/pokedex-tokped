@@ -5,7 +5,7 @@ import {
   GET_POKEMON_DETAIL,
   GET_POKEMON_DETAIL_SUCCESS,
   GET_POKEMON_DETAIL_FAILED,
-} from "./constants"
+} from "../constants"
 
 const initialState = {
   isLoading: false,
@@ -13,7 +13,7 @@ const initialState = {
   errorMessage: "",
   data: [],
   pagination: {
-    currentPage: 0,
+    currentPage: 1,
     hasNext: false,
     total: 0,
   },
@@ -50,37 +50,40 @@ export default function reducer(state = initialState, action) {
         hasError: true,
         errorMessage: action.payload.errorMessage,
       }
-
     case GET_POKEMON_DETAIL:
       return {
         ...state,
-        data: state.data.map((item, index) => {
-          if (index === action.payload.id) {
+        data: state.data.map((item) => {
+          if (item.name === action.payload.name) {
             return {
               ...item,
               isLoading: true,
             }
           }
+
+          return item
         }),
       }
     case GET_POKEMON_DETAIL_SUCCESS:
       return {
         ...state,
-        data: state.data.map((item, index) => {
-          if (index === action.payload.id) {
+        data: state.data.map((item) => {
+          if (item.name === action.payload.name) {
             return {
               ...item,
               ...action.payload.data,
               isLoading: false,
             }
           }
+
+          return item
         }),
       }
     case GET_POKEMON_DETAIL_FAILED:
       return {
         ...state,
-        data: state.data.map((item, index) => {
-          if (index === action.payload.id) {
+        data: state.data.map((item) => {
+          if (item.name === action.payload.name) {
             return {
               ...item,
               ...action.payload.data,
@@ -89,6 +92,8 @@ export default function reducer(state = initialState, action) {
               errorMessage: action.payload.errorMessage,
             }
           }
+
+          return item
         }),
       }
     default:

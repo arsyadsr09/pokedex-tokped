@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { SyncLoader } from "react-spinners"
 import debounce from "lodash.debounce"
 
-import { getPokemonList } from "../../modules/actions"
+import { getPokemonList } from "../../modules/pokemon/action"
 import Navbar from "../../layouts/Navbar"
 import PokeCard from "../../components/PokeCard"
 
@@ -13,7 +13,7 @@ import { BgStyled } from "../../layouts/styled"
 import { CardWrap, ContentWrapper, NoOverflow, LoadingWrapper } from "./styled"
 
 export default function Home() {
-  const statePokemon = useSelector((state) => state)
+  const statePokemon = useSelector((state) => state.pokemon)
   const dispatch = useDispatch()
   const [isBottom, setIsBottom] = useState(false)
 
