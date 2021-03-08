@@ -24,7 +24,7 @@ export default function PokeCard(props) {
     if (!props.data.id) {
       dispatch(getPokemon(props.name))
     }
-  })
+  }, [])
 
   const padLeadingZeros = (num, size) => {
     var s = num + ""

@@ -31,15 +31,17 @@ export default function Home() {
 
   const onScroll = useCallback(
     debounce(() => {
-      dispatch(getPokemonList(statePokemon.pagination.currentPage + 1))
+      if (statePokemon.pagination.hasNext) {
+        dispatch(getPokemonList(statePokemon.pagination.currentPage + 1))
+      }
       setIsBottom(false)
     }, 400),
     [isBottom]
   )
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(getPokemonList())
-    console.log(statePokemon)
   }, [])
 
   useEffect(() => {
