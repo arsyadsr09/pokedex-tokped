@@ -11,6 +11,9 @@ const initialState = {
   data: {},
   specie: {},
   evolution: {},
+  evo_detail: {},
+  before: {},
+  after: {},
 }
 
 export default (state = initialState, action) => {
@@ -28,6 +31,9 @@ export default (state = initialState, action) => {
         data: action.payload.data,
         specie: action.payload.specie,
         evolution: action.payload.evolution,
+        evoDetail: action.payload.evoDetail,
+        before: action.payload.before,
+        after: action.payload.after,
       }
     case GET_POKEMON_DETAIL_PAGE_FAILED:
       return {
@@ -36,6 +42,7 @@ export default (state = initialState, action) => {
         hasError: true,
         errorMessage: action.payload.errorMessage,
       }
+
     default:
       return state
   }
