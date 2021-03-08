@@ -1,5 +1,12 @@
 import styled from "@emotion/styled"
+import { Link } from "react-router-dom"
 
+export const PokemonLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+`
 
 export const PokemonCard = styled.div`
   display: flex;
@@ -66,7 +73,7 @@ export const PokemonCard = styled.div`
 
 export const ImageCanvas = styled.div`
   transition: all 0.5s ease;
-  background-color #f1f2f6;
+  background-color: #f1f2f6;
   padding: 10px;
   border-radius: 8px;
   overflow: hidden;
