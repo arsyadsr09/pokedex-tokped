@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { getPokemon } from "../../modules/pokemon/action"
 import { SyncLoader } from "react-spinners"
 
@@ -17,14 +17,23 @@ import {
 } from "./styled"
 
 export default function PokeCard(props) {
+  const stateMyPokemon = useSelector((state) => state.myPokemon)
+  const [Owned, setOwned] = useState(0)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(props.name)
     if (!props.data.id) {
       dispatch(getPokemon(props.name))
+      getOwned()
     }
   }, [])
+
+  const getOwned = () => {
+    const _owned = stateMyPokemon.data.filter(
+      (item) => item.name === props.name
+    )
+    setOwned(_owned.length)
+  }
 
   const padLeadingZeros = (num, size) => {
     var s = num + ""
@@ -64,6 +73,7 @@ export default function PokeCard(props) {
                 <>
                   <PokemonNumber>
                     #{padLeadingZeros(props.id + 1, 3)}
+                    {Owned > 0 && <span>Owned {Owned}</span>}
                   </PokemonNumber>
                   <PokemonTitle>{props.name}</PokemonTitle>
                   {props.data.types && (

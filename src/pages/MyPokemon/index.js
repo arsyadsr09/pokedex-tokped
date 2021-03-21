@@ -10,9 +10,9 @@ import PokeCard from "../../components/PokeCard"
 import BgGrey from "../../assets/images/container_bg.png"
 
 import { BgStyled } from "../../layouts/styled"
-import { CardWrap, ContentWrapper, LoadingWrapper } from "./styled"
+import { CardWrap, ContentWrapper, LoadingWrapper } from "../Home/styled"
 
-export default function Home() {
+export default function MyPokemon() {
   const statePokemon = useSelector((state) => state.pokemon)
   const dispatch = useDispatch()
   const [isBottom, setIsBottom] = useState(false)

@@ -18,7 +18,3 @@ export const LoadingWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-
-export const NoOverflow = styled.div`
-  overflow: hidden;
-`

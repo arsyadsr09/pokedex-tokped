@@ -15,6 +15,7 @@ import Stats from "../../components/Stats"
 import Navbar from "../../layouts/Navbar"
 import BgContainer from "../../assets/images/container_bg.png"
 import { BgStyled } from "../../layouts/styled"
+import Catch from "../../components/Catch"
 import {
   PathLeftStyled,
   PathRightStyled,
@@ -39,6 +40,8 @@ import {
   LabelType,
   TypeWrap,
   TypeStyled,
+  ButtonCatch,
+  NoOverflow,
 } from "./styled"
 
 import { LoadingWrapper } from "../Home/styled"
@@ -67,7 +70,8 @@ export default function Detail() {
   }
 
   return (
-    <>
+    <NoOverflow>
+      <Catch />
       <Navbar />
       <ContainerWrapper>
         {state.detail.isLoading || state.detail.data.name === undefined ? (
@@ -221,6 +225,14 @@ export default function Detail() {
                         </TypeStyled>
                       )}
                     </TypeWrap>
+                    <ButtonCatch>
+                      <img
+                        src={`https://pngimg.com/uploads/pokeball/pokeball_PNG21.png`}
+                        alt="PokeBall"
+                        width="50px"
+                      />
+                      <span>Catch Pokemon</span>
+                    </ButtonCatch>
                   </div>
                 </Row>
                 <Row className="row">
@@ -234,6 +246,6 @@ export default function Detail() {
           </>
         )}
       </ContainerWrapper>
-    </>
+    </NoOverflow>
   )
 }

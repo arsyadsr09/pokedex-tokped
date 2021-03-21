@@ -131,7 +131,9 @@ export const PokemonNumber = styled.span`
   padding: 0 5px;
   font-size: 0.8rem;
   color: #747d8c;
-  margin-left: 10px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
 `
 
 export const PokemonTypeStyled = styled.span`

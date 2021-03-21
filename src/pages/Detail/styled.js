@@ -155,9 +155,9 @@ export const NumberStyled = styled.span`
 `
 
 export const ImageCanvas = styled.div`
-  background-color #f1f2f6;
+  background-color: #f1f2f6;
   padding: 10px;
-  width:100%;
+  width: 100%;
   border-radius: 8px;
 `
 
@@ -321,4 +321,38 @@ export const TypeStyled = styled.span`
   .fairy {
     background: #b24592;
   }
+`
+
+export const ButtonCatch = styled(Link)`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background: linear-gradient(to right, #eccc68, #ff4757);
+  border-radius: 16px;
+  width: 100%;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.5s ease;
+
+  &:hover {
+    text-decoration: none;
+    background: linear-gradient(to right, #ff4757, #eccc68);
+    transition: all 0.5s ease;
+  }
+
+  span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  img {
+    margin-right: 0.7rem;
+  }
+`
+
+export const NoOverflow = styled.div`
+  overflow: hidden;
 `
